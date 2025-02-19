@@ -1,55 +1,103 @@
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #ff4d6d, #1a1a1a);
-    color: white;
     text-align: center;
-    padding: 50px;
+    background: linear-gradient(to right, #ffcccc, #ffe6e6);
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-.merged-theme h1 {
-    font-size: 50px;
-    background: -webkit-linear-gradient(#ffcc00, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+h1 {
+    font-size: 2.5em;
+    margin-top: 20px;
 }
 
-.hearts {
-    font-size: 30px;
-    animation: float 1.5s infinite alternate;
+p {
+    font-size: 1.2em;
+    margin: 10px 0;
 }
 
-@keyframes float {
-    from { transform: translateY(0px); }
-    to { transform: translateY(-10px); }
+.merged-theme {
+    padding: 20px;
+}
+
+.section {
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.india {
+    background: url('india-background.jpg') no-repeat center;
+    background-size: cover;
+    color: white;
+}
+
+.america-africa {
+    background: url('america-africa-background.jpg') no-repeat center;
+    background-size: cover;
+    color: white;
 }
 
 .flag {
-    width: 150px;
-    height: 100px;
-    background: linear-gradient( orange 33%, orange 66%,white 33%, green 66%);
-    display: inline-block;
-    margin-top: 20px;
-    border: 2px solid white;
-}
-
-.candle {
-    width: 20px;
+    width: 100px;
     height: 60px;
-    background: white;
-    position: relative;
-    display: inline-block;
-    margin-top: 20px;
+    background: url('indian-flag.png') no-repeat center;
+    background-size: cover;
+    margin: 20px auto;
 }
 
-.candle::before {
-    content: "";
-    width: 10px;
-    height: 15px;
-    background: orange;
-    border-radius: 50%;
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
+.diya {
+    width: 50px;
+    height: 50px;
+    background: url('diya.png') no-repeat center;
+    background-size: cover;
+    margin: 20px auto;
+}
+
+.amar-jawan-jyoti {
+    width: 120px;
+    height: 120px;
+    background: url('amar-jawan-jyoti.png') no-repeat center;
+    background-size: cover;
+    margin: 20px auto;
+}
+
+.war-memorial {
+    width: 150px;
+    height: 150px;
+    background: url('war-memorial.png') no-repeat center;
+    background-size: cover;
+    margin: 20px auto;
+}
+
+.soldiers {
+    width: 200px;
+    height: 100px;
+    background: url('soldiers.png') no-repeat center;
+    background-size: cover;
+    margin: 20px auto;
+}
+
+.hearts {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+.africa-symbols {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+.historical-figures ul {
+    list-style: none;
+    padding: 0;
+}
+
+.historical-figures li {
+    font-size: 1.2em;
+    margin: 10px 0;
 }

@@ -110,10 +110,10 @@ td:hover + .event-info {
     border-radius: 15px;
     box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.4);;
     text-align: center;
+    position: relative;
 
     animation: rippleEffect 3.5s ease-out, floatEffect 3s infinite ease-in-out;
-    position: relative;
-    overflow: hidden;
+    
 }
 
 

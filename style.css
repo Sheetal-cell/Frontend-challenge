@@ -1,138 +1,73 @@
-/* Basic setup */
+/* Basic styling */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to right, #fefcea, #f1da36);
-    overflow: hidden;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    font-family: 'Poppins', sans-serif;
     margin: 0;
 }
 
-.container {
+.calendar {
+    width: 350px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.month {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff4e50;
     display: flex;
-    width: 80vw;
-    height: 80vh;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 2px solid #ff4e50;
 }
 
-/* Left Side - February Love & Winter */
-.left {
-    flex: 1;
-    background: linear-gradient(to bottom, #ff758c, #ff7eb3);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.heart {
-    width: 100px;
-    height: 100px;
-    background: red;
-    position: absolute;
-    top: 30%;
-    left: 40%;
-    transform: rotate(-45deg);
-    animation: heartbeat 1.5s infinite;
-}
-
-.heart:before,
-.heart:after {
-    content: "";
-    width: 100px;
-    height: 100px;
-    background: red;
-    border-radius: 50%;
-    position: absolute;
-}
-
-.heart:before {
-    top: -50px;
-    left: 0;
-}
-
-.heart:after {
-    left: 50px;
-    top: 0;
-}
-
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1) rotate(-45deg); }
-    50% { transform: scale(1.1) rotate(-45deg); }
-}
-
-/* Right Side - Pulwama Tribute */
-.right {
-    flex: 1;
-    background: linear-gradient(to bottom, #000428, #004e92);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.indian-flag {
-    width: 150px;
-    height: 100px;
-    position: absolute;
-    top: 10%;
-    animation: wave 2s infinite;
-}
-
-.indian-flag div {
+/* Table Styling */
+table {
     width: 100%;
-    height: 33.3%;
+    border-collapse: collapse;
+    margin-top: 10px;
 }
 
-.orange { background: #ff9933; }
-.white { background: #ffffff; position: relative; }
-.green { background: #138808; }
-
-.ashoka-chakra {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 2px solid #0000ff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+th, td {
+    width: 14.2%;
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
 }
 
-@keyframes wave {
-    0%, 100% { transform: rotate(0); }
-    50% { transform: rotate(5deg); }
+th {
+    background: #ff4e50;
+    color: white;
+    padding: 10px;
 }
 
-.soldiers {
-    position: absolute;
-    bottom: 10%;
-    display: flex;
+td:hover {
+    background: #ff758c;
+    color: white;
+    transform: scale(1.1);
 }
 
-.soldier {
-    width: 20px;
-    height: 40px;
-    background: black;
-    margin: 0 10px;
+/* Animation for Hover */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
-/* Flickering candle animation */
-.candle {
-    width: 10px;
-    height: 30px;
-    background: yellow;
-    position: absolute;
-    bottom: 5%;
-    box-shadow: 0 0 10px yellow;
-    animation: flicker 1s infinite;
-}
-
-@keyframes flicker {
-    0% { opacity: 0.8; }
-    50% { opacity: 1; }
-    100% { opacity: 0.8; }
+td:hover {
+    animation: bounce 0.5s;
 }

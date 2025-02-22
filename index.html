@@ -1,71 +1,351 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>How to Create Calendar</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>February Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/calender bg2.webp" type="image/x-icon">
 </head>
 <body>
-    <div class="calendar">
-        <div class="month">
-            <strong>February</strong>
-            <strong>2025</strong>
+    <audio id="bg-audio" autoplay loop>
+        <source src="assets/bg music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <!-- Event Details Section (Outside the Calendar) -->
+        <div class="event-info">
+            <h3 id="event-title">Event Details</h3>
+            <p id="event-text">Hover over a date to see details.</p>
+            <img id="event-image" src="" alt="" style="width:100%; display:none;">
+            <audio id="event-audio" src="" style="display:none;" autoplay></audio>
         </div>
-        <table>
-            <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><a href="#">1</a></td>
-            </tr>
-            <tr>
-                <td><a href="#">2</a></td>
-                <td><a href="#">3</a></td>
-                <td><a href="#">4</a></td>
-                <td><a href="#">5</a></td>
-                <td><a href="#">6</a></td>
-                <td><a href="#">7</a></td>
-                <td><a href="#">8</a></td>
-            </tr>
-            <tr>
-                <td><a href="#">9</a></td>
-                <td><a href="#">10</a></td>
-                <td><a href="#">11</a></td>
-                <td><a href="#">12</a></td>
-                <td><a href="#">13</a></td>
-                <td><a href="assets/amar jawan jyoti.jpg">14</a></td>
-                <td><a href="#">15</a></td>
-            </tr>
-            <tr>
-                <td><a href="#">16</a></td>
-                <td><a href="#">17</a></td>
-                <td><a href="#">18</a></td>
-                <td><a href="#">19</a></td>
-                <td><a href="#">20</a></td>
-                <td><a href="#">21</a></td>
-                <td><a href="#">22</a></td>
-            </tr>
-            <tr>
-                <td><a href="#">23</a></td>
-                <td><a href="#">24</a></td>
-                <td><a href="#">25</a></td>
-                <td><a href="#">26</a></td>
-                <td><a href="#">27</a></td>
-                <td><a href="#">28</a></td>
-                <td></td>
-            </tr>
-        </table>
+
+        <!-- Calendar Section -->
+        <div class="calendar">
+            <div class="month">
+                <h2>February</h2>
+                <h2>2025</h2>
+            </div>
+        
+            <table>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="#event1">1</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#event2">2</a></td>
+                    <td><a href="#event3">3</a></td>
+                    <td><a href="#event4">4</a></td>
+                    <td><a href="#event5">5</a></td>
+                    <td><a href="#event6">6</a></td>
+                    <td><a href="#event7">7</a></td>
+                    <td><a href="#event8">8</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#event9">9</a></td>
+                    <td><a href="#event10">10</a></td>
+                    <td><a href="#event11">11</a></td>
+                    <td><a href="#event12">12</a></td>
+                    <td><a href="#event13">13</a></td>
+                    <td><a href="#event14">14</a></td>
+                    <td><a href="#event15">15</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#event16">16</a></td>
+                    <td><a href="#event17">17</a></td>
+                    <td><a href="#event18">18</a></td>
+                    <td><a href="#event19">19</a></td>
+                    <td><a href="#event20">20</a></td>
+                    <td><a href="#event21">21</a></td>
+                    <td><a href="#event22">22</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#event23">23</a></td>
+                    <td><a href="#event24">24</a></td>
+                    <td><a href="#event25">25</a></td>
+                    <td><a href="#event26">26</a></td>
+                    <td><a href="#event27">27</a></td>
+                    <td><a href="#event28">28</a></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Event Details -->
+    <div class="event-info-container">
+        <div class="event-info" id="event1">
+            <h3>National Freedom Day (USA)</h3>
+            <p>Honoring the signing of the resolution that abolished slavery.</p>
+            <img src="assets/freedom_day.jpg" alt="National Freedom Day">
+            <audio autoplay>
+                <source src="assets/freedom_day.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event2">
+            <h3>World Wetlands Day</h3>
+            <p>Raising awareness about the importance of wetlands.</p>
+            <img src="assets/wetlands.jpg" alt="World Wetlands Day">
+            <audio autoplay>
+                <source src="assets/wetlands.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event3">
+            <h3>International Golden Retriever Day</h3>
+            <p>Celebrating one of the most beloved dog breeds.</p>
+            <img src="assets/golden_retriever.jpg" alt="Golden Retriever Day">
+            <audio autoplay>
+                <source src="assets/golden_retriever.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event4">
+            <h3>World Cancer Day</h3>
+            <p>Spreading awareness about cancer prevention and treatment.</p>
+            <img src="assets/cancer_awareness.jpg" alt="World Cancer Day">
+            <audio autoplay>
+                <source src="assets/cancer_awareness.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event5">
+            <h3>Kashmir Solidarity Day</h3>
+            <p>A day to express unity and support for Kashmir.</p>
+            <img src="assets/kashmir_day.jpg" alt="Kashmir Solidarity Day">
+            <audio autoplay>
+                <source src="assets/kashmir_day.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event6">
+            <h3>International Day of Zero Tolerance for FGM</h3>
+            <p>Raising awareness about female genital mutilation.</p>
+            <img src="assets/fgm_awareness.jpg" alt="Zero Tolerance for FGM">
+            <audio autoplay>
+                <source src="assets/fgm_awareness.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event7">
+            <h3>Rose Day</h3>
+            <p>A day to express love with roses.</p>
+            <img src="assets/rose_day.jpg" alt="Rose Day">
+            <audio autoplay>
+                <source src="assets/rose_day.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event8">
+            <h3>Propose Day</h3>
+            <p>A day to confess love and proposals.</p>
+            <img src="assets/propose_day.jpg" alt="Propose Day">
+            <audio autoplay>
+                <source src="assets/propose_day.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event9">
+            <h3>Chocolate Day</h3>
+            <p>Share sweetness with your loved ones!</p>
+            <img src="assets/chocolate_day.jpg" alt="Chocolate Day">
+            <audio autoplay>
+                <source src="assets/chocolate_day.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event10">
+            <h3>Teddy Day</h3>
+            <p>A day to give adorable teddy bears!</p>
+            <img src="assets/teddy_day.jpg" alt="Teddy Day">
+            <audio autoplay>
+                <source src="assets/teddy_day.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event11">
+            <h3>Promise Day</h3>
+            <p>A day to make and keep promises.</p>
+            <img src="assets/promise_day.jpg" alt="Promise Day">
+            <audio autoplay>
+                <source src="assets/promise_day.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event12">
+            <h3>Hug Day</h3>
+            <p>A warm hug to show care and affection.</p>
+            <img src="assets/hug_day.jpg" alt="Hug Day">
+            <audio autoplay>
+                <source src="assets/hug_day.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event13">
+            <h3>Kiss Day</h3>
+            <p>A day to express love through a kiss.</p>
+            <img src="assets/kiss_day.jpg" alt="Kiss Day">
+            <audio autoplay>
+                <source src="assets/kiss_day.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event14">
+            <h3>Valentine's Day</h3>
+            <p>The celebration of love and affection.</p>
+            <img src="assets/valentines.jpg" alt="Valentine's Day">
+            <audio autoplay>
+                <source src="assets/valentines.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="event-info" id="event15">
+            <h3>International Childhood Cancer Day</h3>
+            <p>Raising awareness about childhood cancer.</p>
+            <img src="assets/childhood_cancer.jpg" alt="Childhood Cancer Day">
+            <audio autoplay>
+                <source src="assets/childhood_cancer.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event16">
+            <h3>Innovation Day</h3>
+            <p>Celebrating creativity and technological advancements.</p>
+            <img src="assets/innovation_day.jpg" alt="Innovation Day">
+            <audio autoplay>
+                <source src="assets/innovation_day.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event17">
+            <h3>Random Acts of Kindness Day</h3>
+            <p>Encouraging kindness and generosity.</p>
+            <img src="assets/kindness_day.jpg" alt="Kindness Day">
+            <audio autoplay>
+                <source src="assets/kindness_day.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event18">
+            <h3>National Battery Day</h3>
+            <p>Recognizing the importance of batteries in daily life.</p>
+            <img src="assets/battery_day.jpg" alt="Battery Day">
+            <audio autoplay>
+                <source src="assets/battery_day.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event19">
+            <h3>International Tug of War Day</h3>
+            <p>Celebrating the classic sport of strength.</p>
+            <img src="assets/tug_of_war.jpg" alt="Tug of War Day">
+            <audio autoplay>
+                <source src="assets/tug_of_war.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event20">
+            <h3>World Day of Social Justice</h3>
+            <p>Promoting equality and human rights.</p>
+            <img src="assets/social_justice.jpg" alt="Social Justice Day">
+            <audio autoplay>
+                <source src="assets/social_justice.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event21">
+            <h3>International Mother Language Day</h3>
+            <p>Celebrating linguistic and cultural diversity.</p>
+            <img src="assets/mother_language.jpg" alt="Mother Language Day">
+            <audio autoplay>
+                <source src="assets/mother_language.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event22">
+            <h3>World Thinking Day</h3>
+            <p>A day for self-reflection and personal growth.</p>
+            <img src="assets/thinking_day.jpg" alt="Thinking Day">
+            <audio autoplay>
+                <source src="assets/thinking_day.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event23">
+            <h3>International Dog Biscuit Appreciation Day</h3>
+            <p>A fun day to treat your furry friends!</p>
+            <img src="assets/dog_biscuit.jpg" alt="Dog Biscuit Day">
+            <audio autoplay>
+                <source src="assets/dog_biscuit.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event24">
+            <h3>National Tortilla Chip Day</h3>
+            <p>Enjoy a delicious snack with salsa or guacamole!</p>
+            <img src="assets/tortilla_chip.jpg" alt="Tortilla Chip Day">
+            <audio autoplay>
+                <source src="assets/tortilla_chip.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event25">
+            <h3>Let’s All Eat Right Day</h3>
+            <p>Encouraging a healthy and balanced diet.</p>
+            <img src="assets/eat_right.jpg" alt="Eat Right Day">
+            <audio autoplay>
+                <source src="assets/eat_right.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event26">
+            <h3>Tell a Fairy Tale Day</h3>
+            <p>Revisit childhood by telling magical stories.</p>
+            <img src="assets/fairy_tale.jpg" alt="Fairy Tale Day">
+            <audio autoplay>
+                <source src="assets/fairy_tale.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event27">
+            <h3>International Polar Bear Day</h3>
+            <p>Raising awareness about climate change and polar bears.</p>
+            <img src="assets/polar_bear.jpg" alt="Polar Bear Day">
+            <audio autoplay>
+                <source src="assets/polar_bear.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="event-info" id="event28">
+            <h3>Rare Disease Day</h3>
+            <p>Spreading awareness about rare diseases.</p>
+            <img src="assets/rare_disease.jpg" alt="Rare Disease Day">
+            <audio autoplay>
+                <source src="assets/rare_disease.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+    
+    
+    
+        
+        
+        <!-- Add event details for other dates similarly -->
     </div>
 </body>
 </html>

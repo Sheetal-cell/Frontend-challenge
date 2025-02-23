@@ -136,6 +136,9 @@ td:hover + .event-info {
     animation: rippleEffect 3.5s ease-out, floatEffect 3s infinite ease-in-out;
     
 }
+button{
+    justify-content: start;
+}
 
 
 @keyframes rippleEffect {
@@ -312,19 +315,7 @@ td {
         order: 1;
     }
 
-    /* Move Event Info Below */
-    .event-info-container {
-        position: relative;
-        width: 100%;
-        max-width: 400px;
-        right: auto;
-        top: auto;
-        transform: none;
-        text-align: center;
-        display: block;
-        opacity: 1;
-        order: 2;
-    }
+    
 
     .event-details {
         position: relative;
@@ -452,7 +443,90 @@ td {
     animation: fly 1.5s infinite ease-in-out;
 }
 
+/* 🛠 Responsive Fix: Make Calendar Appear Above Events */
+@media (max-width: 1024px) {
+    body{
+        margin: 0%;
+    }
+    .container {
+        flex-direction: column; /* Stack elements vertically */
+         /* Center everything */
+    }
 
+    /* 📅 Ensure Calendar is Above */
+    .calendar {
+        order: 3;
+        width: 50%;
+        max-width: 400px;
+        margin-bottom: 20px; /* Adds spacing below the calendar */
+        margin-left: 0;
+        align-items: left;
+        background-size: cover;
+        background-position: cover;
+        background-repeat: no-repeat;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.4);;
+        text-align: center;
+        position: relative;
+    }
+
+    /* 📅 Ensure Events Appear Below */
+    .event-info-container {
+        order: 2;
+        width: 50%;
+        max-width: 400px;
+        text-align: center;
+        align-items: right;
+        margin-right: 0;
+    }
+
+    /* Adjust individual event details */
+    .event-details {
+        position: relative;
+        width: 50%;
+        right: auto;
+        top: auto;
+        transform: none;
+        text-align: center;
+        align-items: right;
+        margin-right: 0;
+    }
+}
+
+/* 📱 Mobile Optimized (Extra Small Screens) */
+@media (max-width: 480px) {
+    body{
+        margin: 0%;
+    }
+    .calendar {
+        width: 60%;
+        max-width: 320px;
+        padding: 10px;
+        align-items: left;
+        margin-left: 0;
+        background-size: cover;
+        background-position: cover;
+        background-repeat: no-repeat;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.4);;
+        text-align: center;
+        position: relative;
+        font-size: 10px;
+    }
+    .month{
+        font-size: 10px;
+    }
+
+    .event-info-container {
+        width: 40%;
+        max-width: 320px;
+        align-items: right;
+        margin-right: 0;
+        font-size: 10px;
+    }
+}
 
 
 

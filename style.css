@@ -122,10 +122,10 @@ td:hover + .event-info {
 
 .calendar {
     width: 550px;
-    height: 550px;;
+    height: 100%px;;
     background-image: url(assets/calender\ bg3.webp);
     background-size: cover;
-    background-position: center;
+    background-position: cover;
     background-repeat: no-repeat;
     padding: 20px;
     border-radius: 15px;
@@ -175,6 +175,7 @@ td:hover + .event-info {
 table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
     margin-top: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     opacity: 0;
@@ -187,8 +188,8 @@ table {
 }
 
 th, td {
-    width: 14.2%;
-    height: 50px;
+    width: auto;
+    height: auto;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
@@ -290,3 +291,98 @@ td {
     display: none;
 }
 
+.event-info.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ✅ Mobile Fix: Calendar Before Events */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Keep Calendar Above Events */
+    .calendar {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+        order: 1;
+    }
+
+    /* Move Event Info Below */
+    .event-info-container {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        right: auto;
+        top: auto;
+        transform: none;
+        text-align: center;
+        display: block;
+        opacity: 1;
+        order: 2;
+    }
+
+    .event-details {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* 🌐 Mobile Extra Small Screens */
+@media (max-width: 480px) {
+    .calendar {
+        width: 100%;
+        max-width: 320px;
+        padding: 10px;
+    }
+
+    .event-info-container {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+@media (max-width: 1024px) {
+    .event-info-container {
+        order: 2;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    .event-details {
+        width: 100%;
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+    }
+}
+/* Ensure Calendar & Events Are in Correct Order */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center; /* Center everything */
+    }
+
+    .calendar {
+        order: 1; /* Ensure Calendar appears first */
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px; /* Add spacing below calendar */
+    }
+
+    .event-info-container {
+        order: 2;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+}
